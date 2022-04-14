@@ -13,8 +13,17 @@ describe("isScheduleConflict", () => {
 
   it("returns [false] for unexistent or wrong values", () => {
     expect(isScheduleConflict(null)).toBe(false);
+  });
+
+  it("returns [false] for unexistent or wrong values", () => {
     expect(isScheduleConflict(undefined)).toBe(false);
+  });
+
+  it("returns [false] for unexistent or wrong values", () => {
     expect(isScheduleConflict()).toBe(false);
+  });
+
+  it("returns [false] for unexistent or wrong values", () => {
     expect(isScheduleConflict(100)).toBe(false);
   });
 
