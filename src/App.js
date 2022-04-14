@@ -63,8 +63,8 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <div className="app-filters">
+    <main className="app">
+      <section className="app-filters">
         <div className="app-filter-item">
           <DatePicker
             value={selectedDate}
@@ -78,15 +78,15 @@ const App = () => {
             options={DROPDOWN_OPTIONS}
           />
         </div>
-      </div>
-      <div className="app-reservations">
+      </section>
+      <section className="app-reservations">
         {loading && <Loading />}
         {!loading && filteredReservations && (
           <ReservationList reservations={filteredReservations} />
         )}
         {error && <Error error={error} />}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

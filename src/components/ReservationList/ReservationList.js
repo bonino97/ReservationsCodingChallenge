@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { MONTHS } from "../../constants/months";
 
@@ -56,4 +56,4 @@ const ReservationList = ({ reservations }) => {
   );
 };
 
-export default ReservationList;
+export default memo(ReservationList);
