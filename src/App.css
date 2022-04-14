@@ -1,0 +1,26 @@
+.app {
+  padding: 16px 16px;
+}
+
+@media only screen and (min-width: 640px) {
+  .app {
+    padding: 32px 10vw;
+  }
+}
+
+.app-filters {
+  padding: 16px;
+  background-color: #eee;
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.app-filter-item {
+  margin: 0 16px;
+}
+
+.app-reservations {
+  margin-top: 16px;
+}
