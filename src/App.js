@@ -24,10 +24,6 @@ const App = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // useMemo is calling twice the endpoint.
-  // useEffect is better here because calls one time.
-  // useMemo is not a good practice to call an endpoint. But i cant found a way to use useMemo hook mentioned in the documentation.
-
   useEffect(() => {
     setLoading(true);
     getReservations()
