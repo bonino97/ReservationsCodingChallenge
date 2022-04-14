@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
 import DatePicker from "./components/DatePicker/DatePicker";
 import DropDownSelect from "./components/DropDownSelect/DropDownSelect";
@@ -28,7 +28,7 @@ const App = () => {
   // useEffect is better here because calls one time.
   // useMemo is not a good practice to call an endpoint. But i cant found a way to use useMemo hook mentioned in the documentation.
 
-  useMemo(() => {
+  useEffect(() => {
     setLoading(true);
     getReservations()
       .then((reservations) => {
@@ -39,6 +39,12 @@ const App = () => {
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
+
+  const sortReservations = useMemo(
+    () => (reservations) =>
+      reservations.sort((a, b) => (a.start > b.start ? 1 : -1)),
+    []
+  );
 
   const handleSelectedRoom = (room) => {
     setSelectedRoom(room);
@@ -56,10 +62,6 @@ const App = () => {
         isDateBetween(date, reservation?.start, reservation?.end)
       )
     );
-  };
-
-  const sortReservations = (reservations) => {
-    return reservations.sort((a, b) => (a.start > b.start ? 1 : -1));
   };
 
   return (

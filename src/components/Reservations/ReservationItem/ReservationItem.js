@@ -1,7 +1,12 @@
 import React from "react";
 
 import { MONTHS } from "../../../constants/months";
+
 import "./ReservationItem.css";
+
+/**
+ * @param {reservation} reservation - reservation item
+ */
 
 const ReservationItem = ({ reservation }) => {
   const getFormattedTimes = (start, end) => {
