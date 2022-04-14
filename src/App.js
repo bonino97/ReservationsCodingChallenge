@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 
 import DatePicker from "./components/DatePicker/DatePicker";
 import DropDownSelect from "./components/DropDownSelect/DropDownSelect";
-import ReservationList from "./components/ReservationList/ReservationList";
+import ReservationsList from "./components/Reservations/ReservationsList/ReservationsList";
 
 import Error from "./components/Error/Error";
 import Loading from "./components/Loading/Loading";
@@ -82,7 +82,7 @@ const App = () => {
       <section className="app-reservations">
         {loading && <Loading />}
         {!loading && filteredReservations && (
-          <ReservationList reservations={filteredReservations} />
+          <ReservationsList reservations={filteredReservations} />
         )}
         {error && <Error error={error} />}
       </section>

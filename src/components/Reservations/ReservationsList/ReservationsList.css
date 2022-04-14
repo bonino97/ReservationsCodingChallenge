@@ -1,0 +1,9 @@
+body {
+  padding: 40px 0;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  align-items: stretch;
+}
