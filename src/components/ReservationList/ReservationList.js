@@ -35,7 +35,7 @@ const ReservationList = ({ reservations }) => {
 
   return (
     <div className="container">
-      <main className="grid">
+      <section className="grid">
         {reservations?.map((reservation) => (
           <article key={reservation?.id}>
             <img src={reservation?.room?.imageUrl} alt="Room Image" />
@@ -51,7 +51,7 @@ const ReservationList = ({ reservations }) => {
           </article>
         ))}
         {!reservations.length && <div>No reservations.</div>}
-      </main>
+      </section>
     </div>
   );
 };
